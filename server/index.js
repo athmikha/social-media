@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import  bcrypt from "bcrypt"
 import bodyParser from "body-parser"
-const saltRounds = 10;
+
 
 
 
@@ -30,7 +30,7 @@ app.get("/",(req,res)=>{
 ////////////////////////////////////////////////////////////////////////
 var id=0;
 app.post("/userinput", function(req, res){
-    console.log('hlooo')
+    
     var sql = "insert into user"+id+" (title,detail,date1) values (?)";
     console.log(sql);
     var values =[req.body.title,req.body.Detail,req.body.date1]
@@ -51,7 +51,7 @@ app.post("/userinput", function(req, res){
 
 
   app.get("/sorta", function(req, res){
-    console.log('sorta')
+    
    var sql="SELECT * FROM user"+id+" order by date1;";
     console.log(sql)
     db.query(sql, function(err,results2, feilds)
@@ -62,7 +62,7 @@ app.post("/userinput", function(req, res){
     
   })
   app.get("/sortd", function(req, res){
-    console.log('sortd')
+   
    var sql="SELECT * FROM user"+id+" order by date1 desc ;";
     console.log(sql)
     db.query(sql, function(err,results2, feilds)
